@@ -13,10 +13,10 @@ public class EfEatRecordRepository : IEatRecordRepository
         _context = context;
     }
 
-    public async Task IncrementOrCreateEatRecord(User user)
+    public async Task IncrementOrCreateEatRecord(int userId)
     {
         var record = await _context.EatRecords
-            .FirstOrDefaultAsync(rec => rec.UserId == user.Id);
+            .FirstOrDefaultAsync(rec => rec.UserId == userId);
 
         if (record is not null)
         {
@@ -26,7 +26,7 @@ public class EfEatRecordRepository : IEatRecordRepository
         {
             _context.EatRecords.Add(new EatRecord()
             {
-                UserId = user.Id,
+                UserId = userId,
                 Count = 1
             });
         }

@@ -10,16 +10,12 @@ public sealed class AppDbContext : DbContext
 
     public AppDbContext(DbContextOptions options) : base(options)
     {
-        Database.EnsureCreated();
     }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<User>()
-            .HasIndex()
+            .HasIndex("Email")
             .IsUnique();
-
-        modelBuilder.Entity<EatRecord>()
-            .HasKey(er => er.UserId);
     }
 }
