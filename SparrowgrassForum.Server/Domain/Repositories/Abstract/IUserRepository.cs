@@ -6,5 +6,5 @@ public interface IUserRepository
 {
     Task RegisterUser(User user);
     Task<bool> UserEmailExists(string email);
-    Task<User> GetUserByEmail(string email);
+    Task<User?> GetUserByEmail(string email);
 }
