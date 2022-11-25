@@ -8,5 +8,7 @@ public class EatRecord
     public int UserId { get; set; }
     public int Count { get; set; }
 
+    public DateTime LastUpdated { get; set; }
+
     [JsonIgnore] public User? User { get; set; }
 }

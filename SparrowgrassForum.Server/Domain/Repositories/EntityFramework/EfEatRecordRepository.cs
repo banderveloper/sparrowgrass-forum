@@ -31,6 +31,7 @@ public class EfEatRecordRepository : IEatRecordRepository
             });
         }
 
+        record.LastUpdated = DateTime.Now;
         await _context.SaveChangesAsync();
     }
 

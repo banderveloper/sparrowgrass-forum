@@ -47,7 +47,8 @@ public class MainController : ControllerBase
         return new RecordGetModel()
         {
             Name = record.User.Name,
-            Count = record.Count
+            Count = record.Count,
+            LastUpdated = record.LastUpdated
         };
     }
 }
