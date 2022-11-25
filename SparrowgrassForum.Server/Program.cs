@@ -5,6 +5,7 @@ new ServiceSetup(builder).Init(); // service injecting
 
 var app = builder.Build();
 
+app.UseHttpsRedirection();
 app.UseRateLimiter(); // requests per minute limit
 app.MapControllers();
 
