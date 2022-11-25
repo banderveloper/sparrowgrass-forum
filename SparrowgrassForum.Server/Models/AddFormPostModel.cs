@@ -2,7 +2,7 @@
 
 namespace SparrowgrassForum.Server.Models;
 
-public class EatRecordAddModel
+public class AddFormPostModel
 {
     [Required(ErrorMessage = "Name is required")]
     [MinLength(3, ErrorMessage = "Minimal name length is 3")]

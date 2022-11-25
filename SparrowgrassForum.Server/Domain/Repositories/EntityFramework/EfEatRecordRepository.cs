@@ -33,4 +33,9 @@ public class EfEatRecordRepository : IEatRecordRepository
 
         await _context.SaveChangesAsync();
     }
+
+    public async Task<List<EatRecord>> GetEatRecordWithUsers()
+    {
+        return await _context.EatRecords.Include(er => er.User).ToListAsync();
+    }
 }

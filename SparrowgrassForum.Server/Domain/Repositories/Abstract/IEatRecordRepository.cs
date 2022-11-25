@@ -6,4 +6,5 @@ public interface IEatRecordRepository
 {
     // Increment sparrowgrass record COUNT field by user id
     Task IncrementOrCreateEatRecord(int userId);
+    Task<List<EatRecord>> GetEatRecordWithUsers();
 }
