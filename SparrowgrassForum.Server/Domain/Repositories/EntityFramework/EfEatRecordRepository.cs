@@ -13,6 +13,8 @@ public class EfEatRecordRepository : IEatRecordRepository
         _context = context;
     }
 
+    // Increment sparrowgrass record COUNT field by user id
+    // or insert new record 
     public async Task IncrementOrCreateEatRecord(int userId)
     {
         var record = await _context.EatRecords
@@ -21,20 +23,22 @@ public class EfEatRecordRepository : IEatRecordRepository
         if (record is not null)
         {
             record.Count++;
+            record.LastUpdated = DateTime.Now;
         }
         else
         {
             _context.EatRecords.Add(new EatRecord()
             {
                 UserId = userId,
-                Count = 1
+                Count = 1,
+                LastUpdated = DateTime.Now
             });
         }
 
-        record.LastUpdated = DateTime.Now;
         await _context.SaveChangesAsync();
     }
 
+    // Get all records with included users
     public async Task<List<EatRecord>> GetEatRecordWithUsers()
     {
         return await _context.EatRecords.Include(er => er.User).ToListAsync();

@@ -16,6 +16,7 @@ public class MainController : ControllerBase
         _dataManager = dataManager;
     }
 
+    // Get sparrowgrass records, returns list if {userName, count, last changed datetime}
     [HttpGet]
     public async Task<IActionResult> GetModel()
     {
@@ -29,6 +30,7 @@ public class MainController : ControllerBase
         return Ok(result);
     }
 
+    // Post request handling, user fills form with name and email inputs
     [HttpPost]
     public async Task<IActionResult> HandleFormPost(AddFormPostModel model)
     {
@@ -42,6 +44,7 @@ public class MainController : ControllerBase
         return Ok();
     }
 
+    // Entity EatRecord to return model item
     private RecordGetModel ToEatRecordModel(EatRecord record)
     {
         return new RecordGetModel()

@@ -3,6 +3,8 @@ using SparrowgrassForum.Server.Domain.Repositories.Abstract;
 
 namespace SparrowgrassForum.Server.Domain.Repositories;
 
+// Union of all repositories for simplify
+// Also has some additional methods that contains two+ repos. calls
 public class DataManager
 {
     public IEatRecordRepository EatRecords { get; init; }

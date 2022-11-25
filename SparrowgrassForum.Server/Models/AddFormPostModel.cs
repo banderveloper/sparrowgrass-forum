@@ -2,6 +2,7 @@
 
 namespace SparrowgrassForum.Server.Models;
 
+// Form post data for adding new / updating record
 public class AddFormPostModel
 {
     [Required(ErrorMessage = "Name is required")]
