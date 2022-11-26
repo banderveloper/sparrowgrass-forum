@@ -12,7 +12,7 @@ namespace SparrowgrassForum.Server;
 public class ServiceSetup
 {
     private readonly WebApplicationBuilder _builder;
-    private const int RequestsPerMinute = 20;  // for limiting
+    private const int RequestsPerMinute = 40;  // for limiting
     
     public ServiceSetup(WebApplicationBuilder builder)
     {
