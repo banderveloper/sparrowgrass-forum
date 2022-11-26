@@ -1,11 +1,16 @@
 import React from 'react';
+import {BrowserRouter, Link} from "react-router-dom";
 
 const Navbar = () => {
     return (
         <nav className="navbar">
             <ul className="navbar__list">
-                <li><a href="/">Form</a></li>
-                <li><a href="/records">Records</a></li>
+                <li>
+                    <Link to='/'>Form</Link>
+                </li>
+                <li>
+                    <Link to='/records'>Records</Link>
+                </li>
             </ul>
         </nav>
     );
