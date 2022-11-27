@@ -16,10 +16,16 @@ const MainForm = () => {
 
     return (
         <div className='form-block'>
-            <form method='post' action='/api' onSubmit={handleSubmit}>
-                <input type="text" name='name'/>
-                <input type="email" name='email'/>
-                <input type="submit"/>
+            <form className='form' method='post' action='/api' onSubmit={handleSubmit}>
+                <div className="form-group">
+                    <label htmlFor="id">Name</label>
+                    <input type="text" name='name' id='name'/>
+                </div>
+                <div className="form-group">
+                    <label htmlFor="email">Email</label>
+                    <input type="email" name='email' id='email'/>
+                </div>
+                <button type='submit'>Я ем спаржу!</button>
             </form>
         </div>
     );

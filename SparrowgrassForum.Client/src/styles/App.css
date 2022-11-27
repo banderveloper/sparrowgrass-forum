@@ -1,0 +1,60 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, sans-serif;
+    color: lightgray;
+    transition: 0.3s all;
+}
+
+body{
+    background-color: #1e1e1e;
+}
+
+/********************* NAVBAR ***********************/
+
+.navbar{
+    border-bottom: 1px solid lightgray;
+}
+
+.navbar__list{
+    display: flex;
+    list-style-type: none;
+}
+.navbar__list li{
+    padding: 10px 0;
+}
+.navbar__list li:hover{
+   background-color: #3b3b3b;
+}
+.navbar__list li a{
+    text-decoration: none;
+    padding: 25px;
+}
+
+/********************* FORM ***********************/
+
+.form-block{
+    padding: 25px;
+}
+
+.form{
+
+}
+.form-group{
+    margin-bottom: 10px;
+}
+.form-group input{
+    background: none;
+    border: 1px solid lightgray;
+    padding: 5px;
+}
+.form-group label{
+    display: block;
+}
+.form button{
+    background: none;
+    padding: 10px;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+}
