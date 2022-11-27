@@ -6,7 +6,7 @@ import RecordsService from "../API/RecordsService";
 const RecordList = () => {
 
     const [records, setRecords] = useState([]);
-    const [fetchRecords, isLoading, errors] = useFetching(async () => {
+    const [fetchRecords, isLoading] = useFetching(async () => {
 
         const response = await RecordsService.getAll();
         setRecords(response.data);

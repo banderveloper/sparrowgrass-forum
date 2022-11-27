@@ -1,4 +1,5 @@
 import React from 'react';
+import RecordsService from "../API/RecordsService";
 
 const MainForm = () => {
 
@@ -6,16 +7,9 @@ const MainForm = () => {
         event.preventDefault();
         const form = event.target;
 
-        const response = await fetch('/api', {
-            method: "POST",
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({
-                name: form.name.value,
-                email: form.email.value
-            })
-        });
+        const response = await RecordsService.post(form.name.value, form.email.value);
 
-        if (response.ok) {
+        if (response.status === 200) {
             document.location.href = '/records';
         }
     }
